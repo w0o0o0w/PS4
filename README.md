@@ -5,7 +5,7 @@ Based on [PSFree from Kame repo](https://github.com/kmeps4/PSFree)
 # How to run
 
 ## Website
-SOON
+[Click Here](https://nazky.github.io/PSFree/)
 
 ## Locally
 
