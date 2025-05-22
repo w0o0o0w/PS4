@@ -16,9 +16,11 @@ console = Console()
 
 # Configuration for manifest generation
 EXCLUDED_DIRS = {'.venv', '.git', 'noneed'}
-EXCLUDED_EXTENSIONS = {'.bat', '.txt', '.exe', '.mp4', '.py', '.BAK', '.zip',
-                       '.mp3', '.sh', '.h', '.c', '.o', '.ld', 'COPYING',
-                       'LICENSE', '.md', '.d', 'MAKEFILE', '.gitignore'}
+EXCLUDED_EXTENSIONS = {
+    '.bat', '.txt', '.exe', '.mp4', '.py', '.bak', '.zip',
+    '.mp3', '.sh', '.h', '.c', '.o', '.ld', '.md', '.d'
+}
+EXCLUDED_FILES = {'.gitignore', 'COPYING', 'LICENSE', 'MAKEFILE'}
 OUTPUT_FILE = 'PSFree.manifest'
 
 def get_machine_ip():
@@ -66,25 +68,32 @@ def get_ipv4():
     return ip
 
 def create_manifest():
-    root_dir = os.path.abspath(os.path.dirname(__file__))
+    root_dir = os.path.dirname(os.path.abspath(__file__))
     manifest_path = os.path.join(root_dir, OUTPUT_FILE)
-
     with open(manifest_path, 'w', encoding='utf-8') as f:
+        # Write header
         f.write("CACHE MANIFEST\n")
-        f.write("# v1\n")
+        f.write(f"# v1\n")
         f.write(f"# Generated on {datetime.now()}\n\n")
         f.write("CACHE:\n")
+        # Walk through all files
         for dirpath, dirnames, filenames in os.walk(root_dir):
-            # Modify dirnames in-place to skip excluded directories
+            # Remove excluded directories (modifies the dirnames list in-place)
             dirnames[:] = [d for d in dirnames if d not in EXCLUDED_DIRS]
             for filename in filenames:
                 filepath = os.path.join(dirpath, filename)
-                relpath = os.path.relpath(filepath, root_dir).replace(os.sep, '/')
+                relpath = os.path.relpath(filepath, root_dir)
+                # Skip excluded files, extensions and the manifest file itself
                 ext = os.path.splitext(filename)[1].lower()
-                if ext in EXCLUDED_EXTENSIONS or filename == OUTPUT_FILE:
+                if (ext in EXCLUDED_EXTENSIONS or
+                    filename in EXCLUDED_FILES or
+                    filename == OUTPUT_FILE):
                     continue
-                f.write(f"{relpath}\n")
-        f.write("\nNETWORK:\n*\n")
+                # Write relative path to manifest
+                f.write(f"{relpath.replace(os.sep, '/')}\n")
+        # Write network section
+        f.write("\nNETWORK:\n")
+        f.write("*\n")
 
 
 class CustomHandler(SimpleHTTPRequestHandler):
