@@ -18,7 +18,7 @@ console = Console()
 EXCLUDED_DIRS = {'.venv', '.git', 'noneed'}
 EXCLUDED_EXTENSIONS = {'.bat', '.txt', '.exe', '.mp4', '.py', '.BAK', '.zip',
                        '.mp3', '.sh', '.h', '.c', '.o', '.ld', 'COPYING',
-                       'LICENSE', '.md', '.d', 'MAKEFILE'}
+                       'LICENSE', '.md', '.d', 'MAKEFILE', '.gitignore'}
 OUTPUT_FILE = 'PSFree.manifest'
 
 def get_machine_ip():
@@ -117,7 +117,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 ("psfree/send.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/send.mjs"),
                 ("kpatch/900.elf", "https://raw.githubusercontent.com/kmeps4/PSFree/main/kpatch/900.elf"),
                 ("rop/900.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/rop/900.mjs"),
-                ("module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
+                #("module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
                 ("module/constants.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/constants.mjs"),
                 ("module/int64.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/int64.mjs"),
                 ("module/mem.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/mem.mjs"),
@@ -125,7 +125,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                 ("module/offset.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/offset.mjs"),
                 ("module/rw.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/rw.mjs"),
                 ("module/utils.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/utils.mjs"),
-                ("module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
+                #("module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
             ]
             results = []
 
