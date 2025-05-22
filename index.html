@@ -3,13 +3,17 @@
   <head>
     <script>
       (function() {
-        let base = document.createElement('base');
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        if (pathParts.length > 0) {
-          base.href = '/' + pathParts[0] + '/';
+        const base = document.createElement('base');
+        const currentUrl = window.location.href.toLowerCase();
+
+        if (currentUrl.includes('github')) {
+          // On GitHub Pages (or any URL containing 'github'), use your repo base
+          base.href = '/PSFree/';
         } else {
+          // Otherwise assume local or other server, use root or detect IP dynamically if you want
           base.href = '/';
         }
+
         document.head.appendChild(base);
       })();
     </script>
