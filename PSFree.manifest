@@ -1,9 +1,8 @@
 CACHE MANIFEST
 # v1
-# Generated on 2025-05-23 00:39:42.640387
+# Generated on 2025-05-23 00:46:37.294554
 
 CACHE:
-.gitignore
 dockerfile
 index.html
 css/index.css
