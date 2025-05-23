@@ -161,9 +161,10 @@ class CustomHandler(SimpleHTTPRequestHandler):
                     # If .mjs file, decode, replace strings using regex, then encode back
                     if is_mjs_file(local_rel_path):
                         text_data = raw_data.decode('utf-8')
-                        text_data = re.sub(r'(?<!\.)\./module\b', '../module', text_data)
+                        text_data = re.sub(r'(?<!\.)\./kpatch\b', './psfree/kpatch', text_data)
+                        text_data = re.sub(r'(?<!\.)\./module\b', './module', text_data)
                         text_data = re.sub(r'(?<!\.)\./rop\b', '../rop', text_data)
-                        text_data = re.sub(r'(?<!\.)\./config\.mjs\b', '../psfree/config.mjs', text_data)
+                        #text_data = re.sub(r'(?<!\.)\./config\.mjs\b', '../psfree/config.mjs', text_data)
                         new_data = text_data.encode('utf-8')
                     else:
                         new_data = raw_data

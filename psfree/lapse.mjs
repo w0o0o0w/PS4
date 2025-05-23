@@ -1519,7 +1519,7 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
     // cr_sceCaps[1]
     kmem.write64(p_ucred.add(0x68), -1);
 
-    const buf = await get_patches('./kpatch/900.elf');
+    const buf = await get_patches('./psfree/kpatch/900.elf');
     // FIXME handle .bss segment properly
     // assume start of loadable segments is at offset 0x1000
     const patches = new View1(await buf, 0x1000);
