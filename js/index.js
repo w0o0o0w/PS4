@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Show alert if checkbox is checked on page load
   if (checkbox.checked) {
-    if (confirm('The jailbreak is going to start please confirm !')) {
+    if (confirm('The jailbreak is going to start please confirm !\nWARNING :\nThis option make the jailbreak unstable and this option is not recommended please use the jailbreak button instead !')) {
       loadMultipleScripts(
         ["./payloads/payload.js", "./psfree/alert.mjs"],
         () => { console.log("All scripts are loaded !"); }
@@ -136,6 +136,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 checkbox.addEventListener('change', (e) => {
+  alert("WARNING :\nThis option make the jailbreak unstable and this option is not recommended please use the jailbreak button instead !")
   localStorage.setItem('autogoldhenstate', e.target.checked);
   onCheckboxChange(e.target.checked);
 });

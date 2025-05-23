@@ -20,7 +20,7 @@ EXCLUDED_EXTENSIONS = {
     '.bat', '.txt', '.exe', '.mp4', '.py', '.bak', '.zip',
     '.mp3', '.sh', '.h', '.c', '.o', '.ld', '.md', '.d'
 }
-EXCLUDED_FILES = {'.gitignore', 'COPYING', 'LICENSE', 'MAKEFILE'}
+EXCLUDED_FILES = {'.gitignore', 'COPYING', 'LICENSE', 'MAKEFILE', 'dockerfile'}
 OUTPUT_FILE = 'PSFree.manifest'
 
 def get_machine_ip():
