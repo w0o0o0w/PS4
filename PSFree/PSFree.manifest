@@ -1,9 +1,8 @@
 CACHE MANIFEST
 # v1
-# Generated on 2025-05-23 01:20:54.608615
+# Generated on 2025-05-23 12:50:11.035678
 
 CACHE:
-dockerfile
 index.html
 css/index.css
 fonts/FONTS.LICENSE

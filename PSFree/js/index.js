@@ -79,7 +79,7 @@ function showlinuxpayloads() {
 
 document.getElementById('jailbreak').addEventListener('click', () => {
     loadMultipleScripts(
-        ["../payloads/payload.js", "../psfree/alert.mjs"],
+        ["../PSFree/payloads/payload.js", "../PSFree/psfree/alert.mjs"],
         () => { console.log("All scripts are loaded !"); }
     );
 });
@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (checkbox.checked) {
     if (confirm('The jailbreak is going to start please confirm !')) {
       loadMultipleScripts(
-        ["../payloads/payload.js", "../psfree/alert.mjs"],
+        ["..../PSFree/payloads/payload.js", "..../PSFree/psfree/alert.mjs"],
         () => { console.log("All scripts are loaded !"); }
       );
     }

@@ -120,21 +120,21 @@ class CustomHandler(SimpleHTTPRequestHandler):
         elif self.path == '/update_exploit':
             root_dir = os.path.abspath(os.path.dirname(__file__))
             files_to_update = [
-                ("psfree/lapse.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/lapse.mjs"),
-                ("psfree/psfree.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/psfree.mjs"),
-                ("psfree/config.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/config.mjs"),
-                ("psfree/send.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/send.mjs"),
-                ("kpatch/900.elf", "https://raw.githubusercontent.com/kmeps4/PSFree/main/kpatch/900.elf"),
-                ("rop/900.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/rop/900.mjs"),
-                #("module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
-                ("module/constants.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/constants.mjs"),
-                ("module/int64.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/int64.mjs"),
-                ("module/mem.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/mem.mjs"),
-                ("module/memtools.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/memtools.mjs"),
-                ("module/offset.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/offset.mjs"),
-                ("module/rw.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/rw.mjs"),
-                ("module/utils.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/utils.mjs"),
-                #("module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
+                ("PSFree/psfree/lapse.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/lapse.mjs"),
+                ("PSFree/psfree/psfree.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/psfree.mjs"),
+                ("PSFree/psfree/config.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/config.mjs"),
+                ("PSFree/psfree/send.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/send.mjs"),
+                ("PSFree/kpatch/900.elf", "https://raw.githubusercontent.com/kmeps4/PSFree/main/kpatch/900.elf"),
+                ("PSFree/rop/900.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/rop/900.mjs"),
+                #("PSFree/module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
+                ("PSFree/module/constants.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/constants.mjs"),
+                ("PSFree/module/int64.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/int64.mjs"),
+                ("PSFree/module/mem.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/mem.mjs"),
+                ("PSFree/module/memtools.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/memtools.mjs"),
+                ("PSFree/module/offset.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/offset.mjs"),
+                ("PSFree/module/rw.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/rw.mjs"),
+                ("PSFree/module/utils.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/utils.mjs"),
+                #("PSFree/module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
             ]
             results = []
 
@@ -213,7 +213,7 @@ console.print(Panel(Text("Simple Python HTTP Server", style="bold white on blue"
 
 console.print(
     f"[green]Server is running![/]\n"
-    f"Listening on [bold magenta]http://{IP}:{PORT}[/]\n",
+    f"Listening on [bold magenta]http://{IP}:{PORT}/PSFree[/]\n",
     style="bold",
 )
 
