@@ -120,21 +120,21 @@ class CustomHandler(SimpleHTTPRequestHandler):
         elif self.path == '/update_exploit':
             root_dir = os.path.abspath(os.path.dirname(__file__))
             files_to_update = [
-                ("PSFree/psfree/lapse.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/lapse.mjs"),
-                ("PSFree/psfree/psfree.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/psfree.mjs"),
-                ("PSFree/psfree/config.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/config.mjs"),
-                ("PSFree/psfree/send.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/send.mjs"),
-                ("PSFree/kpatch/900.elf", "https://raw.githubusercontent.com/kmeps4/PSFree/main/kpatch/900.elf"),
-                ("PSFree/rop/900.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/rop/900.mjs"),
-                #("PSFree/module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
-                ("PSFree/module/constants.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/constants.mjs"),
-                ("PSFree/module/int64.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/int64.mjs"),
-                ("PSFree/module/mem.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/mem.mjs"),
-                ("PSFree/module/memtools.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/memtools.mjs"),
-                ("PSFree/module/offset.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/offset.mjs"),
-                ("PSFree/module/rw.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/rw.mjs"),
-                ("PSFree/module/utils.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/utils.mjs"),
-                #("PSFree/module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
+                ("psfree/lapse.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/lapse.mjs"),
+                ("psfree/psfree.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/psfree.mjs"),
+                ("psfree/config.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/config.mjs"),
+                ("psfree/send.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/refs/heads/main/send.mjs"),
+                ("psfree/kpatch/900.elf", "https://raw.githubusercontent.com/kmeps4/PSFree/main/kpatch/900.elf"),
+                ("psfree/rop/900.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/rop/900.mjs"),
+                #("module/chain.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/chain.mjs"),
+                ("psfree/module/constants.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/constants.mjs"),
+                ("psfree/module/int64.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/int64.mjs"),
+                ("psfree/module/mem.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/mem.mjs"),
+                ("psfree/module/memtools.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/memtools.mjs"),
+                ("psfree/module/offset.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/offset.mjs"),
+                ("psfree/module/rw.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/rw.mjs"),
+                ("psfree/module/utils.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/utils.mjs"),
+                #("module/view.mjs", "https://raw.githubusercontent.com/kmeps4/PSFree/main/module/view.mjs")
             ]
             results = []
 

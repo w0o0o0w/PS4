@@ -19,7 +19,7 @@ import { Int, lohi_from_one } from './int64.mjs';
 import { Addr } from './mem.mjs';
 import { BufferView } from './rw.mjs';
 
-import * as config from '../psfree/config.mjs';
+import * as config from '../config.mjs';
 import * as mt from './memtools.mjs';
 
 // View constructors will always get the buffer property in order to make sure

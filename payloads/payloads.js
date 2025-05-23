@@ -73,22 +73,22 @@ function LoadpaylodsGhen20(PLfile){ //Loading Payload via Payload Param.
 // Dumpers
 
 function load_AppDumper(){
-    PLfile = "../PSFree/payloads/Bins/Dumper/appdumper.bin";
+    PLfile = "./payloads/Bins/Dumper/appdumper.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_KernelDumper(){
-    PLfile = "../PSFree/payloads/Bins/Dumper/kerneldumper.bin";
+    PLfile = "./payloads/Bins/Dumper/kerneldumper.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_VTXDumper(){
-    PLfile = "../PSFree/payloads/Bins/Dumper/ps4-dumper-vtx-900.bin";
+    PLfile = "./payloads/Bins/Dumper/ps4-dumper-vtx-900.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_ModuleDumper(){
-    PLfile = "../PSFree/payloads/Bins/Tools/moduledumper.bin";
+    PLfile = "./payloads/Bins/Tools/moduledumper.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
@@ -96,108 +96,108 @@ function load_ModuleDumper(){
 // Tools
 
 function load_PS4Debug(){
-    PLfile = "../PSFree/payloads/Bins/Tools/ps4debug.bin";
+    PLfile = "./payloads/Bins/Tools/ps4debug.bin";
     Pay = PLfile;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_App2USB(){
-    PLfile = "../PSFree/payloads/Bins/Tools/app2usb.bin";
+    PLfile = "./payloads/Bins/Tools/app2usb.bin";
     Pay = PLfile;
     LoadpaylodsGhen20(PLfile);
 }
 
 
 function load_BackupDB(){
-    PLfile = "../PSFree/payloads/Bins/Tools/backupdb.bin";
+    PLfile = "./payloads/Bins/Tools/backupdb.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_RestoreDB(){
-    PLfile = "../PSFree/payloads/Bins/Tools/exitidu.bin";
+    PLfile = "./payloads/Bins/Tools/exitidu.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_DisableASLR(){
-    PLfile = "../PSFree/payloads/Bins/Tools/disableaslr.bin";
+    PLfile = "./payloads/Bins/Tools/disableaslr.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_DisableUpdates(){
-    PLfile = "../PSFree/payloads/Bins/Tools/disableupdates.bin";
+    PLfile = "./payloads/Bins/Tools/disableupdates.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_EnableUpdates(){
-    PLfile = "../PSFree/payloads/Bins/Tools/enbaleupdates.bin";
+    PLfile = "./payloads/Bins/Tools/enbaleupdates.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_ExitIDU(){
-    PLfile = "../PSFree/payloads/Bins/Tools/exitidu.bin";
+    PLfile = "./payloads/Bins/Tools/exitidu.bin";
     LoadpaylodsGhen20(PLfile);
 }
   
 function load_FTP(){
-    PLfile = "../PSFree/payloads/Bins/Tools/ftp.bin";
+    PLfile = "./payloads/Bins/Tools/ftp.bin";
     LoadpaylodsGhen20(PLfile);
 }
   
 function load_HistoryBlocker(){
-    PLfile = "../PSFree/payloads/Bins/Tools/historyblocker.bin";
+    PLfile = "./payloads/Bins/Tools/historyblocker.bin";
     LoadpaylodsGhen20(PLfile);
 }
   
 function load_RIFRenamer(){
-    PLfile = "../PSFree/payloads/Bins/Tools/rifrenamer.bin";
+    PLfile = "./payloads/Bins/Tools/rifrenamer.bin";
     LoadpaylodsGhen20(PLfile);
 }
   
 function load_Orbis(){
-    PLfile = `../PSFree/payloads/Bins/Tools/Orbis-Toolbox-900.bin`;
+    PLfile = `./payloads/Bins/Tools/Orbis-Toolbox-900.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_WebrRTE(){
-    PLfile = `../PSFree/payloads/Bins/Tools/WebRTE_900.bin`;
+    PLfile = `./payloads/Bins/Tools/WebRTE_900.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_ToDex(){
-    PLfile = `../PSFree/payloads/Bins/Tools/ToDex.bin`;
+    PLfile = `./payloads/Bins/Tools/ToDex.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_KernelClock(){
-    PLfile = "../PSFree/payloads/Bins/Tools/kernel-clock.bin";
+    PLfile = "./payloads/Bins/Tools/kernel-clock.bin";
     LoadpaylodsGhen20(PLfile);
 }
 
 // Linux
 
 function load_Linux(){
-    PLfile = `../PSFree/payloads/Bins/Linux/LinuxLoader-900.bin`;
+    PLfile = `./payloads/Bins/Linux/LinuxLoader-900.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_Linux2gb(){
-    PLfile = `../PSFree/payloads/Bins/Linux/LinuxLoader-900-2gb.bin`;
+    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-2gb.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_Linux3gb(){
-    PLfile = `../PSFree/payloads/Bins/Linux/LinuxLoader-900-3gb.bin`;
+    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-3gb.bin`;
     LoadpaylodsGhen20(PLfile);  
 }
 
 function load_Linux4gb(){
-    PLfile = `../PSFree/payloads/Bins/Linux/LinuxLoader-900-4gb.bin`;
+    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-4gb.bin`;
     LoadpaylodsGhen20(PLfile);  
 
 }
 
 function load_Linux5gb(){
-    PLfile = `../PSFree/payloads/Bins/Linux/LinuxLoader-900-5gb.bin`;
+    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-5gb.bin`;
     LoadpaylodsGhen20(PLfile);  
 }
 
@@ -207,46 +207,46 @@ function load_Linux5gb(){
 // GTA
 
 function load_GTAArbic(){
-    PLfile = `../PSFree/payloads/Bins/GTA/ArabicGuy-1.0-1.27-rfoodxmodz.bin`;
+    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.27-rfoodxmodz.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_GTAArbic3(){
-    PLfile = `../PSFree/payloads/Bins/GTA/ArabicGuy-1.0-1.32-rfoodxmodz.bin`;
+    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.32-rfoodxmodz.bin`;
     LoadpaylodsGhen20(PLfile);
 
 }
 
 function load_GTAArbic33(){
-    PLfile = `../PSFree/payloads/Bins/GTA/ArabicGuy-1.0-1.33-rfoodxmodz.bin`;
+    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.33-rfoodxmodz.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 
 function load_GTABQ(){
-    PLfile = `../PSFree/payloads/Bins/GTA/gtavbq133-900-GraFfiX_221211.bin`;
+    PLfile = `./payloads/Bins/GTA/gtavbq133-900-GraFfiX_221211.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 // RDR2
 
 function load_Oysters100(){
-    PLfile = `../PSFree/payloads/Bins/RDR2/OystersMenu-1.00-FREE.bin`;
+    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.00-FREE.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 
 function load_Oysters113(){
-    PLfile = `../PSFree/payloads/Bins/RDR2/OystersMenu-1.13-FREE.bin`;
+    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.13-FREE.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_Oysters119(){
-    PLfile = `../PSFree/payloads/Bins/RDR2/OystersMenu-1.19-FREE.bin`;
+    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.19-FREE.bin`;
     LoadpaylodsGhen20(PLfile);
 }
 
 function load_Oysters124(){
-    PLfile = `../PSFree/payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin`;
+    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin`;
     LoadpaylodsGhen20(PLfile);
 }
