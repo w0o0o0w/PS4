@@ -164,8 +164,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         text_data = re.sub(r'(?<!\.)\./kpatch\b', './psfree/kpatch', text_data)
                         text_data = re.sub(r'(?<!\.)\./module\b', './module', text_data)
                         text_data = re.sub(r'(?<!\.)\./rop\b', '../rop', text_data)
-                        text_data = re.sub(r'(?<!\.)\.alert("kernel exploit succeeded!");\b', '//alert("kernel exploit succeeded!");', text_data)
-                        #text_data = re.sub(r'(?<!\.)\./config\.mjs\b', '../psfree/config.mjs', text_data)
+                        text_data = text_data.replace('alert("kernel exploit succeeded!");', '//alert("kernel exploit succeeded!");')                        #text_data = re.sub(r'(?<!\.)\./config\.mjs\b', '../psfree/config.mjs', text_data)
                         new_data = text_data.encode('utf-8')
                     else:
                         new_data = raw_data
