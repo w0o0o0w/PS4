@@ -138,8 +138,8 @@ class CustomHandler(SimpleHTTPRequestHandler):
             ]
             results = []
 
-            def file_hash(data):
-                return hashlib.sha256(data).hexdigest()
+            #def file_hash(data):
+            #    return hashlib.sha256(data).hexdigest()
 
             def is_mjs_file(filename):
                 return filename.lower().endswith('.mjs')
@@ -164,6 +164,7 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         text_data = re.sub(r'(?<!\.)\./kpatch\b', './psfree/kpatch', text_data)
                         text_data = re.sub(r'(?<!\.)\./module\b', './module', text_data)
                         text_data = re.sub(r'(?<!\.)\./rop\b', '../rop', text_data)
+                        text_data = re.sub(r'(?<!\.)\.alert("kernel exploit succeeded!");\b', '//alert("kernel exploit succeeded!");', text_data)
                         #text_data = re.sub(r'(?<!\.)\./config\.mjs\b', '../psfree/config.mjs', text_data)
                         new_data = text_data.encode('utf-8')
                     else:
@@ -175,14 +176,19 @@ class CustomHandler(SimpleHTTPRequestHandler):
                         with open(abs_local_path, 'rb') as f:
                             old_data = f.read()
 
-                    # Compare hashes and write if different
-                    if file_hash(new_data) != file_hash(old_data):
-                        os.makedirs(os.path.dirname(abs_local_path), exist_ok=True)
-                        with open(abs_local_path, 'wb') as f:
+                    # Compare hashes and write if different (need to be fixed)
+                    #if file_hash(new_data) != file_hash(old_data):
+                    #    os.makedirs(os.path.dirname(abs_local_path), exist_ok=True)
+                    #    with open(abs_local_path, 'wb') as f:
+                    #        f.write(new_data)
+                    #    results.append(f"{local_rel_path}: updated")
+                    #else:
+                    #    results.append(f"{local_rel_path}: skipped (no change)")
+                        
+                    os.makedirs(os.path.dirname(abs_local_path), exist_ok=True)
+                    with open(abs_local_path, 'wb') as f:
                             f.write(new_data)
-                        results.append(f"{local_rel_path}: updated")
-                    else:
-                        results.append(f"{local_rel_path}: skipped (no change)")
+                    results.append(f"{local_rel_path}: updated")
 
                 except Exception as e:
                     results.append(f"{local_rel_path}: error ({e})")

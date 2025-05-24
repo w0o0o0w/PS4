@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # v1
-# Generated on 2025-05-23 16:25:13.620337
+# Generated on 2025-05-24 21:52:44.392884
 
 CACHE:
 index.html
@@ -8,8 +8,8 @@ css/index.css
 fonts/FONTS.LICENSE
 fonts/LiberationMono-Regular.ttf
 js/index.js
-payloads/payload.bin
-payloads/payload.js
+payloads/GoldHEN.bin
+payloads/GoldHEN.js
 payloads/payloads.js
 payloads/Bins/Dumper/appdumper.bin
 payloads/Bins/Dumper/kerneldumper.bin

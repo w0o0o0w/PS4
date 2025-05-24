@@ -48,47 +48,47 @@
       <div id="payloads-tools" style="display: block;">
         <h2 id="tools">Tools</h2>
           <div id="button-container">
-            <button onclick="load_AppDumper()">App-Dumper</button>
-            <button onclick="load_KernelDumper()">Kernel-Dumper</button>
-            <button onclick="load_VTXDumper()">PS4-Dumper-VTX</button>
-            <button onclick="load_App2USB()">App2USB</button>
-            <button onclick="load_DisableUpdates()">Disable-Updates</button>
-            <button onclick="load_EnableUpdates()">Enable-Updates</button>
-            <button onclick="load_FTP()">FTP</button>
-            <button onclick="load_HistoryBlocker()">History-Blocker</button>
-            <button onclick="load_KernelClock()">Kernel-Clock</button>
-            <button onclick="load_Orbis()">Orbis-Toolbox</button>
-            <button onclick="load_PS4Debug()">PS4-Debug</button>
-            <button onclick="load_ToDex()">ToDex</button>
-            <button onclick="load_BackupDB()">Backup-DB</button>
-            <button onclick="load_RestoreDB()">Restore-DB</button>
-            <button onclick="load_RIFRenamer()">RIF-Renamer</button>
-            <button onclick="load_ExitIDU()">ExitIDU</button>
-            <button onclick="load_DisableASLR()">Disable-ASLR</button>
-            <button onclick="load_ModuleDumper()">Module-Dumper</button>
-            <button onclick="load_WebrRTE()">WebRTE</button>
+            <button data-func="load_AppDumper">App-Dumper</button>
+            <button data-func="load_KernelDumper">Kernel-Dumper</button>
+            <button data-func="load_VTXDumper">PS4-Dumper-VTX</button>
+            <button data-func="load_App2USB">App2USB</button>
+            <button data-func="load_DisableUpdates">Disable-Updates</button>
+            <button data-func="load_EnableUpdates">Enable-Updates</button>
+            <button data-func="load_FTP">FTP</button>
+            <button data-func="load_HistoryBlocker">History-Blocker</button>
+            <button data-func="load_KernelClock">Kernel-Clock</button>
+            <button data-func="load_Orbis">Orbis-Toolbox</button>
+            <button data-func="load_PS4Debug">PS4-Debug</button>
+            <button data-func="load_ToDex">ToDex</button>
+            <button data-func="load_BackupDB">Backup-DB</button>
+            <button data-func="load_RestoreDB">Restore-DB</button>
+            <button data-func="load_RIFRenamer">RIF-Renamer</button>
+            <button data-func="load_ExitIDU">ExitIDU</button>
+            <button data-func="load_DisableASLR">Disable-ASLR</button>
+            <button data-func="load_ModuleDumper">Module-Dumper</button>
+            <button data-func="load_WebrRTE">WebRTE</button>
           </div>
       </div>
       <div id="payloads-game" style="display: none;">
         <h2 id="tools">Game</h2>
           <div id="button-container">
-            <button onclick="load_GTAArbic()">GTAV-ArabicGuy-1.27</button>
-            <button onclick="load_GTAArbic3()">GTAV-ArabicGuy-1.32</button>
-            <button onclick="load_GTAArbic33()">GTAV-ArabicGuy-1.33</button>
-            <button onclick="load_Oysters100()">RDR2-OystersMenu-1.00</button>
-            <button onclick="load_Oysters113()">RDR2-OystersMenu-1.13</button>
-            <button onclick="load_Oysters119()">RDR2-OystersMenu-1.19</button>
-            <button onclick="load_Oysters124()">RDR2-OystersMenu-1.24</button>
+            <button data-func="load_GTAArbic">GTAV-ArabicGuy-1.27</button>
+            <button data-func="load_GTAArbic3">GTAV-ArabicGuy-1.32</button>
+            <button data-func="load_GTAArbic33">GTAV-ArabicGuy-1.33</button>
+            <button data-func="load_Oysters100">RDR2-OystersMenu-1.00</button>
+            <button data-func="load_Oysters113">RDR2-OystersMenu-1.13</button>
+            <button data-func="load_Oysters119">RDR2-OystersMenu-1.19</button>
+            <button data-func="load_Oysters124">RDR2-OystersMenu-1.24</button>
           </div>
       </div>
       <div id="payloads-linux" style="display: none;">
           <h2 id="tools">Linux</h2>
           <div id="button-container">
-            <button onclick="load_Linux()">Linux-1GB</button>
-            <button onclick="load_Linux2gb()">Linux-2GB</button>
-            <button onclick="load_Linux3gb()">Linux-3GB</button>
-            <button onclick="load_Linux4gb()">Linux-4GB</button>
-            <button onclick="load_Linux5gb()">Linux-5GB</button>
+            <button data-func="load_Linux">Linux-1GB</button>
+            <button data-func="load_Linux2gb">Linux-2GB</button>
+            <button data-func="load_Linux3gb">Linux-3GB</button>
+            <button data-func="load_Linux4gb">Linux-4GB</button>
+            <button data-func="load_Linux5gb">Linux-5GB</button>
           </div>
       </div>
     </div>
@@ -107,7 +107,6 @@
     </div>
 
     <script src='./js/index.js'></script>
-    <script src='./payloads/payloads.js'></script>
     <script>
       CheckFW()
     </script>

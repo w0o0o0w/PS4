@@ -21,11 +21,11 @@ var sendPayload = function(url, data, onLoadEndCallback) {
   };
 }
 
-function LoadpaylodsGhen20(PLfile){ //Loading Payload via Payload Param.
-  var PS4IP = '127.0.0.1';
-	  
-		// First do an initial check to see if the BinLoader server is running, ready or busy.
-		var req = new XMLHttpRequest();
+function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
+    var PS4IP = "127.0.0.1";
+
+	// First do an initial check to see if the BinLoader server is running, ready or busy.
+	var req = new XMLHttpRequest();
     if (PS4IP == "127.0.0.1") {
       req.open("POST", `http://${PS4IP}:9090/status`);
     } else {
@@ -33,31 +33,29 @@ function LoadpaylodsGhen20(PLfile){ //Loading Payload via Payload Param.
     }
 		req.send();
 		req.onerror = function(){
-			alert("Cannot Load Payload Because The BinLoader Server Is Not Running");//<<If server is not running, alert message.
-      //ServerStatus("Cannot Load Payload Because The BinLoader Server Is Not Running");
+			//alert("Cannot Load Payload Because The BinLoader Server Is Not Running");//<<If server is not running, alert message.
+            //ServerStatus("Cannot Load Payload Because The BinLoader Server Is Not Running");
+            Loadpayloadonline(PLfile);
 			return;
 		};
 		req.onload = function(){
 			var responseJson = JSON.parse(req.responseText);
 			if (responseJson.status=="ready"){
-		  getPayload(PLfile, function (req) {
+		    getPayload(PLfile, function (req) {
 				if ((req.status === 200 || req.status === 304) && req.response) {
-				   //Sending bins via IP POST Method
-           sendPayload(`http://${PS4IP}:9090`, req.response, function (req) {
-            if (req.status === 200) {
-              alert("Payload sent !");
-					   }else{
-               //ErrorNotif();
-               return;
-              }
-					})
-				}
+				    //Sending bins via IP POST Method
+                    sendPayload(`http://${PS4IP}:9090`, req.response, function (req) {
+                        if (req.status === 200) {
+                            //alert("Payload sent !");
+                        }else{
+                            alert('Payload not send !');
+                            return;
+                        }
+                    })
+                }
 			});
-      PleaseWait();
-			}
-			else {
+			} else {
 				alert("Cannot Load Payload Because The BinLoader Server Is Busy");//<<If server is busy, alert message.
-        //ErrorNotif3();
 				return;
 		  }
 	  };
@@ -65,140 +63,146 @@ function LoadpaylodsGhen20(PLfile){ //Loading Payload via Payload Param.
 
 //--------------------------------------------------
 
-//------Payloads ONLY OR 9.00--------
+//------Payloads--------
 
+// Load Payloads with exploit
+
+function Loadpayloadonline(PLfile) {
+    fetch(PLfile).then(res => {
+        res.arrayBuffer().then(arr => {
+            window.pld = new Uint32Array(arr);
+            setTimeout(() => {
+            window.location.reload();
+            }, 3000); // 3 seconds delay
+        });
+    });   
+}
 
 // Payloads
 
 // Dumpers
 
-function load_AppDumper(){
-    PLfile = "./payloads/Bins/Dumper/appdumper.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_AppDumper(){
+    Loadpayloadlocal("./payloads/Bins/Dumper/appdumper.bin");
 }
 
-function load_KernelDumper(){
-    PLfile = "./payloads/Bins/Dumper/kerneldumper.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_KernelDumper(){
+    Loadpayloadlocal("./payloads/Bins/Dumper/kerneldumper.bin");
 }
 
-function load_VTXDumper(){
-    PLfile = "./payloads/Bins/Dumper/ps4-dumper-vtx-900.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_VTXDumper(){
+    Loadpayloadlocal("./payloads/Bins/Dumper/ps4-dumper-vtx-900.bin");
 }
 
-function load_ModuleDumper(){
-    PLfile = "./payloads/Bins/Tools/moduledumper.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_ModuleDumper(){
+    Loadpayloadlocal("./payloads/Bins/Tools/moduledumper.bin");
+
 }
 
 
 // Tools
 
-function load_PS4Debug(){
-    PLfile = "./payloads/Bins/Tools/ps4debug.bin";
-    Pay = PLfile;
-    LoadpaylodsGhen20(PLfile);
+export function load_PS4Debug(){
+    Loadpayloadlocal("./payloads/Bins/Tools/ps4debug.bin");
+
 }
 
-function load_App2USB(){
-    PLfile = "./payloads/Bins/Tools/app2usb.bin";
-    Pay = PLfile;
-    LoadpaylodsGhen20(PLfile);
+export function load_App2USB(){
+    Loadpayloadlocal("./payloads/Bins/Tools/app2usb.bin");
+
 }
 
 
-function load_BackupDB(){
-    PLfile = "./payloads/Bins/Tools/backupdb.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_BackupDB(){
+    Loadpayloadlocal("./payloads/Bins/Tools/backupdb.bin");
+
 }
 
-function load_RestoreDB(){
-    PLfile = "./payloads/Bins/Tools/exitidu.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_RestoreDB(){
+    Loadpayloadlocal("./payloads/Bins/Tools/exitidu.bin");
+
 }
 
-function load_DisableASLR(){
-    PLfile = "./payloads/Bins/Tools/disableaslr.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_DisableASLR(){
+    Loadpayloadlocal("./payloads/Bins/Tools/disableaslr.bin");
+
 }
 
-function load_DisableUpdates(){
-    PLfile = "./payloads/Bins/Tools/disableupdates.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_DisableUpdates(){
+    Loadpayloadlocal("./payloads/Bins/Tools/disableupdates.bin");
+
 }
 
-function load_EnableUpdates(){
-    PLfile = "./payloads/Bins/Tools/enbaleupdates.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_EnableUpdates(){
+    Loadpayloadlocal("./payloads/Bins/Tools/enbaleupdates.bin");
+
 }
 
-function load_ExitIDU(){
-    PLfile = "./payloads/Bins/Tools/exitidu.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_ExitIDU(){
+    Loadpayloadlocal("./payloads/Bins/Tools/exitidu.bin");
+
 }
   
-function load_FTP(){
-    PLfile = "./payloads/Bins/Tools/ftp.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_FTP(){
+    Loadpayloadlocal("./payloads/Bins/Tools/ftp.bin");
 }
   
-function load_HistoryBlocker(){
-    PLfile = "./payloads/Bins/Tools/historyblocker.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_HistoryBlocker(){
+    Loadpayloadlocal("./payloads/Bins/Tools/historyblocker.bin");
+
 }
   
-function load_RIFRenamer(){
-    PLfile = "./payloads/Bins/Tools/rifrenamer.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_RIFRenamer(){
+    Loadpayloadlocal("./payloads/Bins/Tools/rifrenamer.bin");
+
 }
   
-function load_Orbis(){
-    PLfile = `./payloads/Bins/Tools/Orbis-Toolbox-900.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_Orbis(){
+    Loadpayloadlocal("./payloads/Bins/Tools/Orbis-Toolbox-900.bin");
+
 }
 
-function load_WebrRTE(){
-    PLfile = `./payloads/Bins/Tools/WebRTE_900.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_WebrRTE(){
+    Loadpayloadlocal("./payloads/Bins/Tools/WebRTE_900.bin");
+
 }
 
-function load_ToDex(){
-    PLfile = `./payloads/Bins/Tools/ToDex.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_ToDex(){
+    Loadpayloadlocal("./payloads/Bins/Tools/ToDex.bin");
+
 }
 
-function load_KernelClock(){
-    PLfile = "./payloads/Bins/Tools/kernel-clock.bin";
-    LoadpaylodsGhen20(PLfile);
+export function load_KernelClock(){
+    Loadpayloadlocal("./payloads/Bins/Tools/kernel-clock.bin");
+
 }
 
 // Linux
 
-function load_Linux(){
-    PLfile = `./payloads/Bins/Linux/LinuxLoader-900.bin`;
-    LoadpaylodsGhen20(PLfile);
-}
-
-function load_Linux2gb(){
-    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-2gb.bin`;
-    LoadpaylodsGhen20(PLfile);
-}
-
-function load_Linux3gb(){
-    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-3gb.bin`;
-    LoadpaylodsGhen20(PLfile);  
-}
-
-function load_Linux4gb(){
-    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-4gb.bin`;
-    LoadpaylodsGhen20(PLfile);  
+export function load_Linux(){
+    Loadpayloadlocal("./payloads/Bins/Linux/LinuxLoader-900.bin");
 
 }
 
-function load_Linux5gb(){
-    PLfile = `./payloads/Bins/Linux/LinuxLoader-900-5gb.bin`;
-    LoadpaylodsGhen20(PLfile);  
+export function load_Linux2gb(){
+    Loadpayloadlocal("./payloads/Bins/Linux/LinuxLoader-900-2gb.bin");
+
+}
+
+export function load_Linux3gb(){
+    Loadpayloadlocal("./payloads/Bins/Linux/LinuxLoader-900-3gb.bin");
+  
+}
+
+export function load_Linux4gb(){
+    Loadpayloadlocal("./payloads/Bins/Linux/LinuxLoader-900-4gb.bin");
+  
+
+}
+
+export function load_Linux5gb(){
+    Loadpayloadlocal("./payloads/Bins/Linux/LinuxLoader-900-5gb.bin");
+  
 }
 
 
@@ -206,47 +210,47 @@ function load_Linux5gb(){
 
 // GTA
 
-function load_GTAArbic(){
-    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.27-rfoodxmodz.bin`;
-    LoadpaylodsGhen20(PLfile);
-}
-
-function load_GTAArbic3(){
-    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.32-rfoodxmodz.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_GTAArbic(){
+    Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.27-rfoodxmodz.bin");
 
 }
 
-function load_GTAArbic33(){
-    PLfile = `./payloads/Bins/GTA/ArabicGuy-1.0-1.33-rfoodxmodz.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_GTAArbic3(){
+    Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.32-rfoodxmodz.bin");
+
+
+}
+
+export function load_GTAArbic33(){
+    Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.33-rfoodxmodz.bin");
+
 }
 
 
-function load_GTABQ(){
-    PLfile = `./payloads/Bins/GTA/gtavbq133-900-GraFfiX_221211.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_GTABQ(){
+    Loadpayloadlocal("./payloads/Bins/GTA/gtavbq133-900-GraFfiX_221211.bin");
+
 }
 
 // RDR2
 
-function load_Oysters100(){
-    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.00-FREE.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_Oysters100(){
+    Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.00-FREE.bin");
+
 }
 
 
-function load_Oysters113(){
-    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.13-FREE.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_Oysters113(){
+    Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.13-FREE.bin");
+
 }
 
-function load_Oysters119(){
-    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.19-FREE.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_Oysters119(){
+    Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.19-FREE.bin");
+
 }
 
-function load_Oysters124(){
-    PLfile = `./payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin`;
-    LoadpaylodsGhen20(PLfile);
+export function load_Oysters124(){
+    Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin");
+
 }
