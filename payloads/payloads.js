@@ -1,6 +1,5 @@
 //------BIG THANKS TO SISTRO FOR THIS !!!!!--------
 
-
 var getPayload = function(payload, onLoadEndCallback) {
   var req = new XMLHttpRequest();
   req.open('GET', payload);
@@ -20,6 +19,8 @@ var sendPayload = function(url, data, onLoadEndCallback) {
       if (onLoadEndCallback) onLoadEndCallback(req, event);
   };
 }
+
+//Load payloads with GoldHEN
 
 function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
     var PS4IP = "127.0.0.1";
@@ -48,7 +49,7 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
                         if (req.status === 200) {
                             //alert("Payload sent !");
                         }else{
-                            alert('Payload not send !');
+                            alert('Payload not sent !');
                             return;
                         }
                     })
@@ -95,7 +96,7 @@ export function load_VTXDumper(){
 }
 
 export function load_ModuleDumper(){
-    Loadpayloadlocal("./payloads/Bins/Tools/moduledumper.bin");
+    Loadpayloadlocal("./payloads/Bins/Dumper/moduledumper.bin");
 
 }
 
@@ -174,6 +175,16 @@ export function load_ToDex(){
 
 export function load_KernelClock(){
     Loadpayloadlocal("./payloads/Bins/Tools/kernel-clock.bin");
+
+}
+
+export function load_PermanentUART(){
+    Loadpayloadlocal("./payloads/Bins/Tools/permanent-uart.bin");
+
+}
+
+export function load_PUPDecrypt(){
+    Loadpayloadlocal("./payloads/Bins/Tools/pup-decrypt.bin");
 
 }
 
