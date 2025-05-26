@@ -36,6 +36,7 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
 		req.onerror = function(){
 			//alert("Cannot Load Payload Because The BinLoader Server Is Not Running");//<<If server is not running, alert message.
             //ServerStatus("Cannot Load Payload Because The BinLoader Server Is Not Running");
+            Loadpayloadonline(PLfile);
 			return;
 		};
 		req.onload = function(){
@@ -49,7 +50,6 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
                             //alert("Payload sent !");
                         }else{
                             //alert('Payload not sent !');
-                            Loadpayloadonline(PLfile);
                             return;
                         }
                     })
