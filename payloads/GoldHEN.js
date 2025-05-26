@@ -5,6 +5,7 @@ export function GoldHEN() {
             setTimeout(() => {
             window.location.reload();
             }, 3000); // 3 seconds delay
+            sessionStorage.setItem('jbsuccess', 1);
         })
     });   
 }
