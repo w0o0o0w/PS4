@@ -36,7 +36,6 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
 		req.onerror = function(){
 			//alert("Cannot Load Payload Because The BinLoader Server Is Not Running");//<<If server is not running, alert message.
             //ServerStatus("Cannot Load Payload Because The BinLoader Server Is Not Running");
-            Loadpayloadonline(PLfile);
 			return;
 		};
 		req.onload = function(){
@@ -49,7 +48,8 @@ function Loadpayloadlocal(PLfile){ //Loading Payload via Payload Param.
                         if (req.status === 200) {
                             //alert("Payload sent !");
                         }else{
-                            alert('Payload not sent !');
+                            //alert('Payload not sent !');
+                            Loadpayloadonline(PLfile);
                             return;
                         }
                     })
@@ -170,6 +170,11 @@ export function load_WebrRTE(){
 
 export function load_ToDex(){
     Loadpayloadlocal("./payloads/Bins/Tools/ToDex.bin");
+
+}
+
+export function load_ToCex(){
+    Loadpayloadlocal("./payloads/Bins/Tools/ToCex.bin");
 
 }
 

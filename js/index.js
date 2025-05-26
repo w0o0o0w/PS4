@@ -171,8 +171,25 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   if (checkbox.checked) {
-    if (confirm('The jailbreak is going to start please confirm !\nWARNING :\nThis option make the jailbreak unstable and this option is not recommended please use the jailbreak button instead !')) {
-      jailbreak();
+    // Check if the page has been loaded before
+    if (sessionStorage.getItem('pageLoadCount')) {
+        // Increment the load count
+        let loadCount = parseInt(sessionStorage.getItem('pageLoadCount'));
+        loadCount++;
+        sessionStorage.setItem('pageLoadCount', loadCount);
+        
+        // Check if the load count is greater than 1
+        if (loadCount > 1) {
+            console.log('The page has been loaded more than once.');
+        }
+    } else {
+        // First time loading the page
+        sessionStorage.setItem('pageLoadCount', 1);
+        console.log('This is the first time the page has been loaded.');
+        setTimeout(() => {
+            jailbreak();
+        }, 1000); //  seconds delay
+        
     }
   }
 
