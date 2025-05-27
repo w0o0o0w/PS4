@@ -29,9 +29,19 @@ function CheckFW() {
     document.getElementById('PS4FW').textContent = `PS4 FW: ${FwUAR} | Incompatible`;
     document.getElementById('PS4FW').style.color = 'red';
     document.getElementById('jailbreak-page').style.display = 'none';
+    document.getElementById('jailbreak').style.display = 'none';
+    document.getElementById('autogoldhen').style.display = 'none';
+    document.getElementById('agtext').style.display = 'none';
     document.getElementById('payloadsbtn').style.display = 'none';
+    document.getElementById('generate-cache-btn').style.display = 'none';
+    document.getElementById('update-exploit').style.display = 'none';
   };
 }
+
+if (isHttps()){
+  document.getElementById('generate-cache-btn').style.display = 'none';
+  document.getElementById('update-exploit').style.display = 'none';
+};
 
 function showpayloads() {
   if (document.getElementById('payloadsbtn').textContent == 'Payloads') {
@@ -201,8 +211,3 @@ checkbox.addEventListener('change', (e) => {
   localStorage.setItem('autogoldhenstate', e.target.checked);
   onCheckboxChange(e.target.checked);
 });
-
-if (isHttps()){
-  document.getElementById('generate-cache-btn').style.display = 'none';
-  document.getElementById('update-exploit').style.display = 'none';
-}
