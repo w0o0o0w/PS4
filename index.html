@@ -15,6 +15,7 @@
       <button onclick="showpayloads()" class="menu-btn" id="payloadsbtn">Payloads</button>
       <button class="menu-btn" id="generate-cache-btn">Force-Cache</button>
       <button class="menu-btn" id="update-exploit">Update-Exploit</button>
+      <!--<button onclick="showpayloads()" class="menu-btn" id="payloadsbtn">Settings</button>-->
       <button onclick="showabout()" class="menu-btn" id="about-btn">About</button>
     </div>
 
@@ -48,6 +49,7 @@
       <div id="payloads-tools" style="display: block;">
         <h2 id="tools">Tools</h2>
           <div id="button-container">
+            <!--<button data-func="HEN">HEN</button>-->
             <button data-func="load_AppDumper">App-Dumper</button>
             <button data-func="load_KernelDumper">Kernel-Dumper</button>
             <button data-func="load_VTXDumper">PS4-Dumper-VTX</button>
@@ -60,6 +62,8 @@
             <button data-func="load_Orbis">Orbis-Toolbox</button>
             <button data-func="load_PS4Debug">PS4-Debug</button>
             <button data-func="load_ToDex">ToDex</button>
+            <button data-func="load_ToDev">ToDev</button>
+            <button data-func="load_ToKratos">ToKratos</button>
             <button data-func="load_ToCex">ToCex</button>
             <button data-func="load_BackupDB">Backup-DB</button>
             <button data-func="load_RestoreDB">Restore-DB</button>
@@ -96,9 +100,12 @@
       </div>
     </div>
     
-    <h3>Debug Console</h3>
+    <div id="DebugConsole">
+      <h3>Debug Console</h3>
     
-    <div class="console" style="padding: 20px;"><pre id='console'></pre></div>
+      <div class="console" style="padding: 20px;"><pre id='console'></pre></div>
+    </div>
+    
 
     <!-- About Popup -->
     <div class="overlay" id="overlay-popup"></div>

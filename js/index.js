@@ -72,7 +72,7 @@ function showlinuxpayloads() {
 async function jailbreak() {
   try {
     const modules = await loadMultipleModules([
-      '../payloads/GoldHEN.js',
+      '../payloads/Jailbreak.js',
       '../psfree/alert.mjs'
     ]);
     console.log("All modules are loaded!");
@@ -201,3 +201,8 @@ checkbox.addEventListener('change', (e) => {
   localStorage.setItem('autogoldhenstate', e.target.checked);
   onCheckboxChange(e.target.checked);
 });
+
+if (isHttps()){
+  document.getElementById('generate-cache-btn').style.display = 'none';
+  document.getElementById('update-exploit').style.display = 'none';
+}
