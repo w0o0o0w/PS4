@@ -218,21 +218,41 @@ export function load_Linux5gb(){
 
 // GTA
 
-export function load_GTAArbic(){
+export function load_GTAArbic127(){
     Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.27-rfoodxmodz.bin");
 }
 
-export function load_GTAArbic3(){
+export function load_GTAArbic132(){
     Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.32-rfoodxmodz.bin");
 }
 
-export function load_GTAArbic33(){
+export function load_GTAArbic133(){
     Loadpayloadlocal("./payloads/Bins/GTA/ArabicGuy-1.0-1.33-rfoodxmodz.bin");
 }
 
 
-export function load_GTABQ(){
-    Loadpayloadlocal("./payloads/Bins/GTA/gtavbq133-900-GraFfiX_221211.bin");
+export function load_GTABQ133(){
+    Loadpayloadlocal("./payloads/Bins/GTA/BeefQueefMod-1.33.bin");
+}
+
+export function load_GTABQ134(){
+    Loadpayloadlocal("./payloads/Bins/GTA/BeefQueefMod-1.34.bin");
+}
+
+export function load_GTABQ138(){
+    Loadpayloadlocal("./payloads/Bins/GTA/BeefQueefMod-1.38.bin");
+}
+
+export function load_GTAWM132(){
+    Loadpayloadlocal("./payloads/Bins/GTA/WildeModz-1.32.bin");
+}
+
+export function load_GTAWM134(){
+    Loadpayloadlocal("./payloads/Bins/GTA/WildeModz-1.34.bin");
+}
+
+export function load_GTAWM138(){
+    Loadpayloadlocal("./payloads/Bins/GTA/WildeModz-1.38.bin");
 }
 
 // RDR2
@@ -252,4 +272,8 @@ export function load_Oysters119(){
 
 export function load_Oysters124(){
     Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.24-FREE.bin");
+}
+
+export function load_Oysters129(){
+    Loadpayloadlocal("./payloads/Bins/RDR2/OystersMenu-1.29-FREE.bin");
 }

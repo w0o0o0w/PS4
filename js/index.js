@@ -98,6 +98,26 @@ async function jailbreak() {
   }
 }
 
+async function binloader() {
+  try {
+    sessionStorage.setItem('binloader', 1);
+    const modules = await loadMultipleModules([
+      '../payloads/Jailbreak.js',
+      '../psfree/alert.mjs'
+    ]);
+    console.log("All modules are loaded!");
+
+    const goldhenModule = modules[0];
+    if (goldhenModule && typeof goldhenModule.runBinLoader === 'function') {
+      goldhenModule.runBinLoader();
+    } else {
+      console.error("GoldHEN function not found in GoldHEN.js module");
+    }
+  } catch (e) {
+    console.error("Failed to jailbreak:", e);
+  }
+}
+
 function isHttps() {
   return window.location.protocol === 'https:';
 }
@@ -105,7 +125,7 @@ function isHttps() {
 async function Loadpayloads(payload) {
   try {
     let modules;
-
+    sessionStorage.removeItem('binloader');
     if (isHttps()) {
       modules = await loadMultipleModules([
         '../payloads/payloads.js',
@@ -133,6 +153,11 @@ async function Loadpayloads(payload) {
 document.getElementById('jailbreak').addEventListener('click', () => {
   jailbreak();
 });
+
+document.getElementById('binloader').addEventListener('click', () => {
+  binloader();
+});
+
 
 document.querySelectorAll('button[data-func]').forEach(button => {
   button.addEventListener('click', () => {
