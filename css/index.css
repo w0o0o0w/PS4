@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #222222;
+    background: #202020;
 }
 body {
     min-height: 100vh;
@@ -26,12 +26,12 @@ body {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 2px;
-    text-shadow: 0px 0px 15px #ffe600;
+    text-shadow: 0px 0px 15px #00FFF2;
     background: #6f707433;
     border-radius: 18px;
     padding: 10px 48px;
     pointer-events: auto;
-    border: 3px solid #ffd900; /* Optional: add border for visibility */
+    border: 2px solid #00FFD0; /* Optional: add border for visibility */
 
 }
 .center-btn-wrap {
@@ -49,9 +49,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(200, 200, 200);
+    background: rgba(48, 48, 48, 1);
     border-radius: 1000px;
-    box-shadow: 0 0px 32px #008cff, 0 0px 7px #0009;
+    box-shadow: 0 0px 32px #FF007B, 0 0px 7px #0009;
     width: 136px;
     height: 136px;
     border: none;
@@ -62,21 +62,21 @@ body {
     transition: 0.5s;
 }
 .ps-btn:hover {
-    box-shadow: 0 0px 48px #ffe600,0 0px 10px #000c;
+    box-shadow: 0 0px 48px #00FFE7,0 0px 10px #000c;
     transform: scale(1.07);
     transition: 0.5s;
-    background: rgb(64, 64, 64);
+    background: rgba(49, 49, 49, 1);
 }
 .ps-btn svg:hover {
     transform: scale(1.07);
     transition: 0.5s;
-    fill: #ffe600;
+    fill: #00FF91;
 }
 .ps-btn svg {
     width: 67px;
     height: 67px;
     filter: drop-shadow(0 0px 13px #0282ff33);
-    fill: #008cff;
+    fill: #FD00FF;
     transition: 0.5s;
 }
 #console {
@@ -120,7 +120,7 @@ body {
     margin-left: 10px;
 }
 .menu-btn:hover {
-    background-color: #ffd90081;
+    background-color: #00FFFA81;
 }
 /* Popup styles */
 .popup {
@@ -129,7 +129,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #505050;
     border: 1px solid #ccc;
     padding: 20px;
     z-index: 1001;
@@ -165,7 +165,7 @@ body {
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for centering */
-    background-color: white; /* Popup background */
+    background-color: wrgba(48, 48, 48, 1)hite; /* Popup background */
     border: 1px solid #ccc; /* Optional: border */
     padding: 20px; /* Padding inside the popup */
     z-index: 1000; /* Ensure it is above other content */
@@ -298,13 +298,13 @@ h3 {
 
 /* Hover effect */
 #autogoldhen:hover {
-    border-color: #b3b000;
+    border-color: #0087B3;
 }
 
 /* Checked state */
 #autogoldhen:checked {
     background-color: #6f707433;
-    border-color: #b3b000;
+    border-color: #00B3A4;
 }
 
 /* The yellow checkmark */
@@ -315,7 +315,7 @@ h3 {
     top: 1px;
     width: 5px;
     height: 10px;
-    border: solid yellow;
+    border: solid #00FFE0;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
 }
